@@ -19,7 +19,7 @@ public class KartuHasilStudy {
 
     public String display() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Semester: ").append(semester).append("\n");
+        sb.append("Periode Semester: ").append(semester).append("\n");
         for (Matakuliah mk : daftarMatakuliah) {
             sb.append(mk.display()).append("\n");
         }

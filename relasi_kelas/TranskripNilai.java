@@ -5,44 +5,44 @@ import java.util.*;
 public class TranskripNilai {
     private Date tglCetak;
     private double ipk = 0.0;
-    private List<KartuHasilStudy> kartuHasilStudi;
+    private List<Semester> daftarSemester;
     private Mahasiswa mahasiswa;
 
     public TranskripNilai(Mahasiswa mahasiswa) {
         this.mahasiswa = mahasiswa;
-        this.kartuHasilStudi = new ArrayList<>();
+        this.daftarSemester = new ArrayList<>();
         this.tglCetak = new Date();
     }
 
     public void hitungIPK() {
         double totalIPS = 0;
-        int jumlahSemester = kartuHasilStudi.size();
+        int jumlahSemester = 0;
+
+        for (Semester semester : daftarSemester) {
+            for (KartuHasilStudy khs : semester.getDaftarKHS()) {
+                totalIPS += khs.getIPS();
+                jumlahSemester++;
+            }
+        }
 
         if (jumlahSemester > 0) {
-            for (KartuHasilStudy khs : kartuHasilStudi) {
-                totalIPS += khs.getIPS();
-            }
             this.ipk = totalIPS / jumlahSemester;
         } else {
             this.ipk = 0;
         }
     }
 
-    public void addKHS(KartuHasilStudy khs) {
-        kartuHasilStudi.add(khs);
+    public void addSemester(Semester semester) {
+        daftarSemester.add(semester);
     }
 
     public void display() {
         System.out.println(mahasiswa.display());
         System.out.println("Tanggal Cetak: " + tglCetak.toString());
         System.out.println("IPK: " + ipk);
-        
-        for (KartuHasilStudy khs : kartuHasilStudi) {
-            System.out.println(khs.display());
-        }
-    }
 
-    public double getIPK() {
-        return ipk;
+        for (Semester semester : daftarSemester) {
+            System.out.println(semester.display());
+        }
     }
 }
