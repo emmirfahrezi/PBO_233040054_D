@@ -1,4 +1,4 @@
-package Interface;
+package Pertemuan11.Interface;
 
 // Kelas utama untuk menjalankan program
 public class InterfaceMain {

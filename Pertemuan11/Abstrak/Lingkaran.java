@@ -1,4 +1,4 @@
-package Abstrak;
+package Pertemuan11.Abstrak;
 
 // Kelas Lingkaran merupakan turunan dari Bentuk
 public class Lingkaran extends Bentuk {

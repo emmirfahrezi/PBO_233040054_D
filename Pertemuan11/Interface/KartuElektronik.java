@@ -1,4 +1,4 @@
-package Interface;
+package Pertemuan11.Interface;
 
 // Kelas KartuElektronik mengimplementasikan interface Kartu
 public class KartuElektronik implements Kartu {

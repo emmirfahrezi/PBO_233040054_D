@@ -1,4 +1,6 @@
-package Abstrak;
+package Pertemuan11.Abstrak;
+
+
 // Kelas abstrak sebagai dasar dari bentuk-bentuk lain
 public abstract class Bentuk {
     protected double PHI = 3.14;  // Konstanta nilai PHI untuk perhitungan luas

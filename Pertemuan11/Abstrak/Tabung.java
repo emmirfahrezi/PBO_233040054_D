@@ -1,4 +1,4 @@
-package Abstrak;
+package Pertemuan11.Abstrak;
 
 // Kelas Tabung merupakan turunan dari Bentuk
 public class Tabung extends Bentuk {
